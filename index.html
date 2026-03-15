@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top menu bar (Apple-style look with Ubuntu-like button) -->
+  <header class="menu-bar" role="banner" aria-label="App menu bar">
+    <div class="menu-left">
+      <button id="ubuntuBtn" class="ubuntu-btn" aria-haspopup="true" aria-expanded="false" title="Menu">◧</button>
+      <nav id="appMenu" class="app-menu" role="menu" aria-hidden="true">
+        <button role="menuitem" id="menuNew">New Note</button>
+        <button role="menuitem" id="menuImport">Import...</button>
+        <button role="menuitem" id="menuExport">Export...</button>
+        <button role="menuitem" id="menuRename">Rename...</button>
+        <button role="menuitem" id="menuClear">Clear All</button>
+        <hr/>
+        <button role="menuitem" id="menuAbout">About</button>
+      </nav>
+    </div>
+
+    <div class="menu-center" aria-hidden="true"></div>
+
+    <div class="menu-right">
+      <div id="menuClock" class="menu-clock" aria-live="polite">--:--</div>
+      <button id="menuSearchToggle" class="menu-icon" title="Focus search">🔍</button>
+      <button id="menuCopy" class="menu-icon" title="Copy active note">⎘</button>
+    </div>
+  </header>
+
+  <div id="app">
+    <div class="left">
+      <div class="top-row">
+        <input id="search" type="search" placeholder="Search notes or tags" aria-label="Search notes" />
+        <button id="newBtn" title="New note">＋</button>
+      </div>
+
+      <ul id="notesList" class="notes-list" aria-label="Notes list"></ul>
+
+      <div class="bottom-row">
+        <button id="importBtn">Import</button>
+        <button id="exportBtn">Export</button>
+        <button id="clearAllBtn" class="danger">Clear</button>
+        <input id="fileInput" type="file" accept="application/json" style="display:none" />
+      </div>
+    </div>
+
+    <div class="right">
+      <input id="title" class="title" placeholder="Untitled" aria-label="Note title" />
+      <div class="meta-row">
+        <input id="tags" placeholder="tags: period.separated" aria-label="Tags" />
+        <button id="copyBtn">Copy</button>
+        <button id="deleteBtn" class="danger">Delete</button>
+      </div>
+      <textarea id="content" class="content" placeholder="Start typing…"></textarea>
+
+      <!-- Slash command menu -->
+      <div id="slashMenu" class="slash-menu" role="listbox" aria-hidden="true"></div>
+
+      <div class="status" id="status" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <footer class="app-footer" role="contentinfo" aria-label="App footer">
+    <div class="footer-line">Codename: Note Next Door is a playful pun on "Codename: Kids Next Door" (Cartoon Network).</div>
+    <div class="footer-credits">Credits: Nunito — The Nunito Project Authors &amp; Google Fonts · Slash Commands inspired by Notion · Menu inspired by Apple</div>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
